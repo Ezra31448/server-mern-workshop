@@ -25,6 +25,8 @@ const blogSchema = mongoose.Schema({
     duration: "",
     date: "",
     
-}, {timestamps:true});
+}
+, {timestamps:true}
+);
 
 module.exports = mongoose.model("Blogs", blogSchema);
