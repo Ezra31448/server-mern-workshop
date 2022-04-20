@@ -20,7 +20,10 @@ const blogSchema = mongoose.Schema({
         type:String,
         lowercase:true,
         unique:true
-    }
+    },
+    type: "",
+    duration: "",
+    date: "",
     
 }, {timestamps:true});
 

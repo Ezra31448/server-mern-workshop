@@ -3,7 +3,7 @@ const Blogs = require('../models/blogs');
 const { v4: uuidv4 } = require('uuid');
 //Create data
 exports.create = (req, res) => {
-    const {title, content, author} = req.body;
+    const {title, content, author, type, duration} = req.body;
     let slug =  slugify(title)
 
     if(!slug) {
@@ -18,7 +18,7 @@ exports.create = (req, res) => {
             return res.status(400).json({error:"please insert content"});
             break;
     }
-    Blogs.create({title, content, author, slug}, (err, blog)=>{
+    Blogs.create({title, content, author,type, duration, slug}, (err, blog)=>{
         if(err){
             res.status(400).json({error:`มีข้อมูลซ้ำ`});
         }
