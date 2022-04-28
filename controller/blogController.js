@@ -51,8 +51,8 @@ exports.remove = (req, res) => {
 
 exports.update = (req, res) => {
     const {slug} = req.params;
-    const {title, content} = req.body;
-    Blogs.findOneAndUpdate({slug}, {title, content}, {new:true}).exec((err, blog)=> {
+    const {title, content, type, duration} = req.body;
+    Blogs.findOneAndUpdate({slug}, {title, content, type, duration}, {new:true}).exec((err, blog)=> {
         if(err) console.log(err);
         res.json(blog);
     })
